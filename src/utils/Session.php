@@ -1,0 +1,72 @@
+<?php
+class Session {
+    public static function start() {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_set_cookie_params([
+                'lifetime' => 0,
+                'path' => '/',
+                'domain' => '',
+                'secure' => true,
+                'httponly' => true,
+                'samesite' => 'Strict'
+            ]);
+
+            session_start();
+        }
+    }
+
+    public static function destroy() {
+        $_SESSION = [];
+        session_destroy();
+        setcookie(session_name(), '', time() - 3600, '/');
+    }
+
+    public static function setFlash($type, $message) {
+        $_SESSION['flash'][$type] = $message;
+    }
+
+    public static function getFlash($type) {
+        if (isset($_SESSION['flash'][$type])) {
+            $message = $_SESSION['flash'][$type];
+            unset($_SESSION['flash'][$type]);
+            return $message;
+        }
+
+        return null;
+    }
+
+    public static function setUser($user) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_nome'] = $user['nome'];
+        $_SESSION['user_email'] = $user['email'];
+        $_SESSION['logged_in'] = true;
+    }
+
+    public static function getUser() {
+        return [
+            'id' => $_SESSION['user_id'] ?? null,
+            'nome' => $_SESSION['user_nome'] ?? null,
+            'email' => $_SESSION['user_email'] ?? null
+        ];
+    }
+
+        public static function isLoggedIn() {
+        return isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+    }
+
+    public static function requireLogin() {
+        if (!self::isLoggedIn()) {
+            header('Location: ../../public/login.php');
+            exit();
+        }
+    }
+
+    public static function requireLevel($nivel) {
+        self::requireLogin();
+        if (!isset($_SESSION['user_nivel']) || $_SESSION['user_nivel'] !== $nivel) {
+            header('Location: ../../public/acesso_negado.php');
+            exit();
+        }
+    }
+
+}
