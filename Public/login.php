@@ -70,6 +70,7 @@ $csrf_token = Security::generateCSRFToken();
                 <a href="index.php">Voltar para Home</a>
                 <a href="cadastro.php">Não tem conta? Cadastre-se</a>
                 <a href="recuperacaodesenha.html">Esqueceu a Senha</a>
+                <a href="./telas/index.html">Voltar</a>
             </div>
         </div>
     </div>
