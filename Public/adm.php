@@ -45,6 +45,8 @@ $usuarios = $userModel->getAll();
             <div class="actions">
                 <a href="dashboard.php" class="btn btn-secondary">Voltar</a>
                 <a href="logout.php" class="btn btn-danger">Sair</a>
+                <a href="index.php" class="btn btn-primary">Início</a>
+                <a href="./telas/pastaAdm/editaProduto.php" class="btn btn-primary">editar produtos</a>
             </div>
         </div>
     </div>

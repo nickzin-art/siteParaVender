@@ -71,8 +71,8 @@ $csrf_token = Security::generateCSRFToken();
             </form>
 
             <div class="links">
-                <a href="index.php">Voltar para Home</a>
                 <a href="login.php">Já tem conta? Faça login</a>
+                <a href="./telas/index.html">Voltar</a>
             </div>
 
 

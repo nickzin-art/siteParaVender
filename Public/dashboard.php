@@ -4,16 +4,18 @@ require_once "../src/config/config.php";
 require_once '../src/models/User.php';
 require_once '../src/utils/Session.php';
 
+/*
 Session::requireLogin();
 
 requireLogin();
+*/
  
 try {
     $userModel = new User($pdo);
     $usuario = $userModel->findById($_SESSION["user_id"]);
  
     if (!$usuario) {
-        session_destroy();
+        //session_destroy();
         header("Location: login.php");
         exit();
     }

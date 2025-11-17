@@ -63,6 +63,8 @@ if (isLoggedIn()) {
             <div class="links">
                 <a href="login.php">Já tem conta? Faça login</a>
                 <a href="cadastro.php">Não tem conta? Cadastre-se</a>
+                 <a href="./telas/index.html">voltar</a>
+                p
             </div>
 
         </div>
