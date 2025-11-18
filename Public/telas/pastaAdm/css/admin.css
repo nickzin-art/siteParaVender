@@ -1,0 +1,54 @@
+.adm-container {
+    margin-top: 140px;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.card {
+    background: #141822;
+    padding: 25px;
+    width: 420px;
+    border-radius: 14px;
+    box-shadow: 0 0 20px #0005;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    background: #1c2030;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #00d1ff;
+    border: none;
+    color: #000;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.preview {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+.sucesso {
+    background: #00ff9d33;
+    padding: 10px;
+    border-left: 4px solid #00ff9d;
+    margin-bottom: 15px;
+}

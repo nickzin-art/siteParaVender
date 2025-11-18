@@ -82,6 +82,7 @@ $csrf_token = Security::generateCSRFToken();
                 <p><strong>E-mail:</strong> exemplo@email.com</p>
                 <p><strong>Senha:</strong> 12345678</p>
             </div>
+            <a href="./telas/index.php">Voltar</a>
 
 
 

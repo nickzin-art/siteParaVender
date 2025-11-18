@@ -113,8 +113,9 @@ $csrf_token = Security::generateCSRFToken();
                 <?php endif ?>
         </div>
         <div class="actions">
-            <a href="index.php" class="btn btn-secondary">Página Inicial</a>
+            <a href="./telas/index.php" class="btn btn-secondary">Página Inicial</a>
             <a href="logout.php" class="btn btn-danger">Sair do Sistema</a>
+            <a href="adm.php">Painel Administrativo</a>
         </div>
     </div>
 </body>
